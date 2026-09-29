@@ -1,0 +1,390 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+/* Styles généraux */
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    margin: 0;
+    background-image: url(Images/fond.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+body.Page3{background-color: #0a858c;background-image: none;}
+
+/* Logo bien positionné */
+.logo {
+    width: 220px;
+    position: absolute;
+    top: -30px; /* Remonté pour laisser de l’espace */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* En-tête */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.titre p {
+    font-size: 1.2em;
+    font-weight: normal;
+    letter-spacing: 10px; /* Espacement entre les lettres */
+    margin-top: 30px; /* Ajoute plus d’espace sous le logo */
+    margin-bottom: 60px; /* Ajustement pour ne pas trop le coller à "Athletic Quest" */
+    text-align: center;
+}
+
+/* Titres */
+.titre h1 {
+    font-size: 6em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;
+    letter-spacing: 30px;
+}
+
+/* Couleurs spécifiques */
+.bleu { color: #42ac9e; }
+.orange { color: #f68623; }
+
+#startButton {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(to right, #42ac9e, #f68623); /* Dégradé bleu → orange */
+    color: white;
+    padding: 15px 30px;
+    width: 250px;
+    height: 60px;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: transform 1.5s ease-in-out, width 1.5s ease-in-out, height 1.5s ease-in-out;
+}
+
+.expand {
+   width: 100vw;
+   height: 100vh;
+   border-radius: 0;
+   transform: scale(3);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 10; 
+}
+
+
+
+/* Animation d’apparition fluide pour index */
+.titre, button {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: apparition 1s ease-in-out forwards;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Conteneur du header */
+.header-page2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Assure qu'il est bien au-dessus */
+}
+
+/* Logo bien aligné à gauche */
+.logo-page2, .logo-page3, .logo-page4, .logo-page6 {
+    width: 220px;
+    position: absolute;
+    top: -30px; /* Remonté pour laisser de l’espace */
+    left: 20px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+/* Titre repositionné et agrandi */
+.titre-page2, .titre-page3, .titre-page4, .titre-page6 {
+    font-size: 5em; /* Taille un peu réduite pour un meilleur équilibre */
+    font-weight: bold;
+    text-align: center; /* Alignement du texte à gauche */
+    margin-left: 250px; /* Décalage à droite pour éviter qu’il chevauche le logo */
+    letter-spacing: 30px; /* Réduction de l’espacement entre les lettres */
+    margin-top: -10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: flex-start;
+    margin-top: 100px;
+    position: relative;
+}
+
+/* Style des cartes */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Images dans les cartes */
+.card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    
+}
+
+/* Titres des cartes */
+.card h2 {
+    font-size: 2em;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Effet au survol sur toute la carte (image + texte) */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+.card {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: apparition 1s ease-in-out forwards;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Conteneur du header sur page 3 */
+.header-page3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+
+/* Conteneur du texte historique */
+.histoire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+/* Style des sections historiques */
+.histoire {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.histoire h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.histoire img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.histoire p {
+    font-size: 1.5em;
+    line-height: 1.8;
+}
+
+/* Conteneur du header sur page 4 */
+.header-page4 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Arrière-plan spécifique à la page 4 */
+body.page4 {
+    background-color: #0a858c; /* Couleur spécifique à la page 4 */
+    background-image: none; /* Supprime l’image de fond */
+}
+
+/* Conteneur des disciplines */
+.discipline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+/* Style des sections de disciplines */
+.discipline {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.discipline h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.discipline img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.discipline p {
+    font-size: 1.5em;
+    line-height: 1.8;
+}
+
+/* Conteneur du header sur page 6 */
+.header-page6 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+
+/* Arrière-plan spécifique à la page 6 */
+body.page6 {
+    background-color: #0a858c; /* Couleur spécifique à la page 6 */
+    background-image: none; /* Supprime l’image de fond */
+}
+
+/* Conteneur des compétitions */
+.competition-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+/* Style des sections de compétitions */
+.competition {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.competition h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.competition img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.competition p {
+    font-size: 1.5em;
+    line-height: 1.8;
+}
+
+.histoire, .discipline, .competition {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.liens-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px; /* Réduction du padding */
+    border-radius: 8px; /* Coins légèrement arrondis */
+    display: flex;
+    gap: 10px; /* Réduction de l'espace entre les logos */
+}
+
+.liens-container a img {
+    width: 40px; /* Taille réduite des logos */
+    height: auto;
+    border-radius: 8px; /* Coins arrondis */
+    transition: transform 0.3s ease-in-out;
+}
+
+.liens-container a img:hover {
+    transform: scale(1.1);
+}
+
